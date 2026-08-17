@@ -6,7 +6,7 @@ $soma = 0;
 $maiorNota = $notas[0];
 $menorNota = $notas[0];
 
-// calcular a soma, maior e menor nota[cite: 1]
+// calcular a soma, maior e menor nota
 foreach ($notas as $nota) {
     $soma += $nota;
 
