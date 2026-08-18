@@ -24,6 +24,35 @@
 
     // Monte seu código PHP (Aqui)
 
+     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        //Receber os dados do formulário
+        $nome = $_POST['nome'];
+        $autor = $_POST['autor'];
+        $ano = $_POST['ano'];
+
+        // Status 400: o aluno não preencheu um  campo
+        if ($nome == '' || $autor == '' || $ano == '') {
+            http_response_code(400);
+            echo "<h2>Erro 400: O aluno não preencheu um campo.</h2>";
+
+            //Status 400: idade preenchida,mas não é um número
+        } elseif (!is_numeric($ano)) {
+            http_response_code(400);
+            echo "<h2>Erro 400: Ano preenchido, mas não é um número.</h2>";
+
+        // Status 200: aluno cadastrado com sucesso
+        } else {
+            http_response_code(200);
+            echo "<h2>Livro cadastrado com sucesso!</h2>";
+        }
+    } else {
+        // Status 200: visita normal
+        http_response_code(200);
+        echo "<h2>Bem-vindo ao cadastro de Livros!</h2>";
+        echo "<h3>Preencha o formulário para cadastrar um livro.</h3>";
+    }
+    ?>
+
     ?>
 
 </body>
