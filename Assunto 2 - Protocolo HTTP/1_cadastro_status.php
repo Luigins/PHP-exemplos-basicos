@@ -22,23 +22,22 @@
     <hr>
     <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Trata chaves inexistentes com '??' e remove espaços nas pontas com trim()
-    $nome = trim($_POST['nome'] ?? '');
-    $idade = trim($_POST['idade'] ?? '');
+    $nome = $_POST['nome'] ?? '';
+    $idade = $_POST['idade'] ?? '';
 
     // Status 400: o aluno não preencheu um campo
-    if ($nome === '' || $idade === '') {
+    if ($nome == '' || $idade == '') {
         http_response_code(400);
         echo "<h2>Erro 400: O aluno não preencheu um campo.</h2>";
 
     // Status 400: idade preenchida, mas não é um número
-    } elseif (!is_numeric($idade)) {
+    } elseif (!ctype_digit($idade)) {
         http_response_code(400);
         echo "<h2>Erro 400: Idade preenchida, mas não é um número.</h2>";
 
-    // Status 200: aluno cadastrado com sucesso
+    // Status 201: aluno cadastrado com sucesso
     } else {
-        http_response_code(200);
+        http_response_code(201);
         echo "<h2>Aluno cadastrado com sucesso!</h2>";
     }
 } else {
@@ -48,5 +47,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "<h3>Preencha o formulário para cadastrar um aluno.</h3>";
 }
 ?>
-</body>
-</html>
