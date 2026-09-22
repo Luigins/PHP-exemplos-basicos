@@ -6,14 +6,13 @@
 </head>
 <body>
     <form method="post" action="">
-
-        <p><label for="nome">Nome:</label></p>
+        <label for="nome">Nome:</label>
         <input type="text" name="nome" required><br>
 
-        <p><label for="ano_nascimento">Ano de Nascimento:</label></p>
+        <label for="ano_nascimento">Ano de Nascimento:</label>
         <input type="number" name="ano_nascimento" placeholder="AAAA" required><br>
 
-       <p> <button type="submit">Verificar</button> </p>
+        <button type="submit">Verificar</button>
     </form>
 
   <?php
