@@ -31,7 +31,6 @@
         $dbname = "exercicio";
 
         // Tenta criar uma conexão com o banco de dados
-        $conn = new mysqli($servername, $username, $password, $dbname);
         try {
             $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -53,7 +52,6 @@
             echo "<p style='color: red'>Falha na conexão: " . $e->getMessage() . "</p>";
         }
     }
-
     ?>
 
 </body>
