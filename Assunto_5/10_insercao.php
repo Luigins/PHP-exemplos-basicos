@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -31,6 +32,8 @@
 
         // Tenta criar uma conexão com o banco de dados
         $conn = new mysqli($servername, $username, $password, $dbname);
+        try {
+            $conn = new mysqli($servername, $username, $password, $dbname);
 
             if ($conn->connect_error) {
                 // Se falhar mostra o erro
@@ -46,6 +49,9 @@
             echo"<p style='color: red'>Erro ao cadastrar!</p> ";
         }
 
+        } catch (Exception $e) {
+            echo "<p style='color: red'>Falha na conexão: " . $e->getMessage() . "</p>";
+        }
     }
 
     ?>
