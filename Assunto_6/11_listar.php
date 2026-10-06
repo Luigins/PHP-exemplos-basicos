@@ -23,9 +23,11 @@ if ($result->num_rows > 0) {
     echo "<table border='1'>";
     echo "  <tr>
                 <th>ID</th>
+                <th>Nome</th>
                 <th>Email</th>
             </tr>";
     
+            // Linha da tabela usando: fetch_assoc() - Método nativo do PHP que retorna em linha os registros "Array associativo" (c0m0 id, nome e email)
     while ($row = $result->fetch_assoc()) {
         echo "<tr>";
         echo "<td>" . $row['id'] . "</td>";

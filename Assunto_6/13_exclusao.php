@@ -1,5 +1,5 @@
 <!-- Passar id via URL -->
-<!-- http://localhost/php-basicos/13_exclusao.php?id=5-->
+<!-- http://localhost/php-exemplos-basicos/Assunto_6/13_exclusao.php?id=1 -->
 
 <?php
 // Conectar ao banco de dados
@@ -10,8 +10,7 @@ $dbname =  "exercicio" ;
 
 $conn = new mysqli ($servername, $username, $password, $dbname);
 
-// Verifica a conexão
-// Verifica a conexão
+// Verifica a conexão 
 if ($conn->connect_error) {
     die("Falha na conexão: " . $conn->connect_error);
 }
